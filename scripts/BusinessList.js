@@ -12,6 +12,7 @@ businesses.forEach((business) => {
     let html = `<section id="business">
     <h2>${business.companyName}</h2>
     ${business.addressFullStreet} <br>
-    ${business.addressCity} ${business.addressStateCode}, ${business.addressZipCode}`
+    ${business.addressCity} ${business.addressStateCode}, ${business.addressZipCode}
+    </section>`
     businessList.push(html)
 })
