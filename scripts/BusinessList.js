@@ -9,7 +9,7 @@ export let businessList = []
 //Iterate through the array and return a string for each company
 businesses.forEach((business) => {
     /*html*/ 
-    let html = `<section id="business">
+    let html = `<section id="business" >
     <h2>${business.companyName}</h2>
     ${business.addressFullStreet} <br>
     ${business.addressCity} ${business.addressStateCode}, ${business.addressZipCode}
