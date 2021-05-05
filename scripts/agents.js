@@ -9,8 +9,10 @@ export let agentList = []
 //Display just the purchasing agents
     export const showAgetns = () => {
     businessList.map(business => {
-        let html =  /*html*/ `<section id="agent">
-        ${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}
+        let html =  /*html*/ `<section id="business">
+        <h3>${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}</h3>
+        <h4>${business.companyName}</h4>
+        ${business.phoneWork}
         </section>`
         agentList.push(html)
     } )
