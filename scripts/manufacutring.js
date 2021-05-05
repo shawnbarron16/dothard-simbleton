@@ -5,7 +5,7 @@ const businesses = getBusinesses()
 const activeBusinesses = document.getElementById("active-businesses")
 
 //Create an array to store the html of the manufacturing companies in
-const manufacturingBusinesses = []
+export let manufacturingBusinesses = []
 
 //Rerender html to display manufacturing companies
 export const renderManufacturing = () => {
@@ -18,6 +18,7 @@ export const renderManufacturing = () => {
     </section>`
     manufacturingBusinesses.push(html)
     })
-    header.outerHTML = `<h1 id="header">Manufacturing Businesses</h1>` 
+    header.innerHTML = `Manufacturing Businesses` 
     activeBusinesses.innerHTML = manufacturingBusinesses.join(``)
+    manufacturingBusinesses = []
 }
