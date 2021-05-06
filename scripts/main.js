@@ -3,6 +3,7 @@ import { businessList } from "./BusinessList.js"
 import { renderNewYork } from "./new-york.js"
 import { renderManufacturing } from "./manufacutring.js"
 import { showAgetns } from "./agents.js"
+import { findBusiness } from "./search.js"
 
 //Create a references to the articles/buttons in the html
 const activeBusinesses = document.getElementById("active-businesses")
@@ -11,9 +12,11 @@ const manufacturingButton = document.getElementById("manufacturing-button")
 const homeButton = document.getElementById("home-button")
 const agentButton = document.getElementById("agents")
 const header = document.getElementById("header")
+const search = document.getElementById("search-button")
+let inputText = document.getElementById("search")
 
 //Set initial html to a list of all companies
-const renderHTML = () => {activeBusinesses.innerHTML = businessList.join(``)}
+const renderHTML = () => { activeBusinesses.innerHTML = businessList.join(``) }
 renderHTML()
 
 
@@ -29,7 +32,7 @@ homeButton.addEventListener(
 newYorkButton.addEventListener(
     "click",
     (evt) => {
-        if (header.innerHTML !== "New York Businesses"){
+        if (header.innerHTML !== "New York Businesses") {
             renderNewYork()
         }
     }
@@ -37,17 +40,25 @@ newYorkButton.addEventListener(
 
 manufacturingButton.addEventListener(
     "click",
-    (evt) => { 
-        if (header.innerHTML !== "Manufacutring Bussinesses"){
+    (evt) => {
+        if (header.innerHTML !== "Manufacutring Bussinesses") {
             renderManufacturing()
         }
     }
-    )
-    
-    agentButton.addEventListener(
-        "click",
-        (evt) => {
-            if (header.innerHTML !== "Active Agents")
+)
+
+agentButton.addEventListener(
+    "click",
+    (evt) => {
+        if (header.innerHTML !== "Active Agents")
             showAgetns()
+    }
+)
+
+search.addEventListener(
+    "click",
+    (evt) => {
+        let displayedText = inputText.value
+        findBusiness(displayedText)
     }
 )
